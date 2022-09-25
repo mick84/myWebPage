@@ -1,0 +1,158 @@
+@use "../abstracts" as *;
+@media only screen and (max-width: 425px) {
+  body {
+    nav {
+      grid-template-columns: repeat(3, auto);
+      .logo {
+        grid-column: 1;
+      }
+      .user-actions {
+        grid-column: 2;
+        i {
+          scale: 1.5;
+        }
+        // justify-self: end;
+      }
+      .navbar:not(.mobile) {
+        display: none;
+      }
+
+      #menu-toggle {
+        display: block;
+        color: white;
+        grid-column: 3;
+      }
+    }
+    .navbar.mobile {
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+      width: 0;
+      overflow: hidden;
+      &.active {
+        width: 100%;
+      }
+      .navbar-item {
+        background-color: transparentize($fogra-29, 0.5);
+        color: $cosmic-latte;
+        font-family: "Edu SA Beginner", cursive;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 0.5rem;
+        border-top: 1px solid white;
+      }
+    }
+    .btn-menu {
+      height: 2.25rem;
+      width: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 0.5rem;
+      overflow: hidden;
+      padding: 2px;
+      @keyframes open1 {
+        to {
+          rotate: (-45deg);
+          transform-origin: right;
+        }
+      }
+      @keyframes open2 {
+        to {
+          translate: 110%;
+        }
+      }
+      @keyframes open3 {
+        to {
+          rotate: (45deg);
+          transform-origin: right;
+        }
+      }
+      @keyframes close1 {
+        from {
+          rotate: (-45deg);
+        }
+        to {
+          rotate: 0;
+        }
+      }
+      @keyframes close2 {
+        from {
+          translate: 110%;
+        }
+        to {
+          translate: 0;
+        }
+      }
+      @keyframes close3 {
+        from {
+          rotate: (45deg);
+        }
+        to {
+          rotate: 0;
+        }
+      }
+      @for $n from 1 through 3 {
+        .line:nth-of-type(#{$n}) {
+          animation-name: #{"close" + $n};
+        }
+      }
+      .line {
+        background-color: white;
+        height: 0.4rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        animation-duration: 0.25s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        transform-origin: right;
+      }
+      &.active {
+        @for $n from 1 through 3 {
+          .line:nth-of-type(#{$n}) {
+            animation-name: #{"open" + $n};
+          }
+        }
+      }
+    }
+    main {
+      .page {
+        h2 {
+          margin-top: 5rem;
+        }
+      }
+      .page-2 {
+        height: max-content;
+        //overflow: visible;
+        padding: 1rem;
+        .container {
+          justify-items: center;
+          gap: 1rem;
+          margin: auto;
+          padding: 1rem 0;
+          grid-template-rows: 6;
+          .item {
+            width: 90vw;
+            border-radius: 1rem;
+            .picture {
+              height: 30vh;
+              border-radius: 1rem;
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+      .page-3 {
+        justify-content: space-evenly;
+        align-items: center;
+        .flex-wrapper {
+          flex-direction: column;
+          .skills {
+            width: 80vw;
+          }
+        }
+      }
+    }
+  }
+}

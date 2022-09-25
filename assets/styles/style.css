@@ -1,0 +1,601 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&family=Edu+SA+Beginner&family=Jua&family=Julius+Sans+One&family=Mohave:ital@1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+/**
+CSS rules to specify families
+
+font-family: 'Crimson Pro', serif;
+font-family: 'Edu SA Beginner', cursive;
+font-family: 'Jua', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Mohave', sans-serif;
+*/
+/*first palette*/
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  background-image: url(/assets/pictures/bgr.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  --height: 3rem;
+}
+body header {
+  position: fixed;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body nav {
+  height: var(--height);
+  font-weight: bold;
+  display: grid;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  background-color: #01161e;
+  color: #f8f4e3;
+  z-index: 1000;
+}
+body nav .logo {
+  grid-column: 1;
+  margin-left: 0.5rem;
+  font-family: "Crimson Pro", serif;
+  font-size: 1.5rem;
+}
+body nav .user-actions {
+  display: flex;
+  grid-column: 3;
+}
+body nav .user-actions button:not(.active) {
+  display: none;
+}
+body nav #menu-toggle {
+  display: none;
+}
+body nav button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+body .navbar {
+  display: flex;
+  justify-content: center;
+  font-family: "Edu SA Beginner", cursive;
+}
+body .navbar li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.8vw;
+}
+body main {
+  padding-top: var(--height);
+  overflow: hidden;
+}
+body main h1 {
+  text-align: center;
+  margin: 5vh auto;
+  font-size: 10vmin;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Crimson Pro", serif;
+  background-image: linear-gradient(transparent 20%, rgba(89, 131, 146, 0.75) 40%, rgba(89, 131, 146, 0.75) 60%, transparent 80%), linear-gradient(to right, transparent 10%, rgba(89, 131, 146, 0.75) 30%, rgba(89, 131, 146, 0.75) 70%, transparent 90%);
+  background-blend-mode: lighten;
+  border-radius: 50%;
+  box-shadow: 0 0 5rem 2rem #598392;
+  border: none;
+  color: white;
+  padding: 1rem 3rem;
+  mix-blend-mode: darken;
+}
+body main .btn {
+  margin: 0 auto;
+  border: 2px solid #f8f4e3;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+body main .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+body main .page h2 {
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Crimson Pro", serif;
+  font-size: 3rem;
+  margin: 3rem auto;
+}
+body main .page-2 {
+  margin: auto;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 1rem;
+  background-color: #01161e;
+}
+body main .page-2 h2 {
+  color: #f8f4e3;
+}
+body main .page-2 .container {
+  justify-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f4e3;
+  font-family: "Julius Sans One", sans-serif;
+  border-radius: 1rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body main .page-2 .container .item {
+  border-radius: 1rem;
+}
+body main .page-2 .container .item:nth-of-type(1) .picture {
+  background-image: url(/assets/pictures/me.jpg);
+  background-position: bottom;
+}
+body main .page-2 .container .item:nth-of-type(2) .picture {
+  background-image: url(/assets/pictures/me2.jpg);
+}
+body main .page-2 .container .item:nth-of-type(3) .picture {
+  background-image: url(/assets/pictures/me3.jpg);
+  background-position: top;
+}
+body main .page-2 .container .item:nth-of-type(4) .picture {
+  background-image: url(/assets/pictures/codingbrain.jpg);
+}
+body main .page-2 .container .item:nth-of-type(5) .picture {
+  background-image: url(/assets/pictures/Website-Design.jpeg);
+}
+body main .page-2 .container .item:nth-of-type(6) .picture {
+  background-image: url(/assets/pictures/dev.png);
+}
+body main .page-2 .container .item .picture {
+  height: 25vh;
+  border-radius: 1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body main .page-3 {
+  background-color: #f8f4e3;
+  color: #706c61;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+}
+body main .page-3 .flex-wrapper {
+  display: flex;
+  align-items: start;
+}
+body main .page-3 .flex-wrapper .skills {
+  display: grid;
+  grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+  width: 80vmin;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  max-width: 400px;
+  gap: 1rem;
+  padding: 1rem;
+}
+body main .page-3 .flex-wrapper .skills .skill {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(1) {
+  background-image: url(/assets/pictures/html.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(2) {
+  background-image: url(/assets/pictures/css.jpg);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(3) {
+  background-image: url(/assets/pictures/sass.jpg);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(4) {
+  background-image: url(/assets/pictures/mysql_hosting.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(5) {
+  background-image: url(/assets/pictures/javascript_logo.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(6) {
+  background-image: url(/assets/pictures/typescript.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(7) {
+  background-image: url(/assets/pictures/react.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(8) {
+  background-image: url(/assets/pictures/node.png);
+}
+body main .page-3 .flex-wrapper .skills .skill:nth-of-type(9) {
+  background-image: url(/assets/pictures/mongo.png);
+}
+body main .page-3 .question {
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 1.5rem;
+}
+body main .page-4 {
+  background-clip: border-box;
+  background-size: 30%;
+  position: relative;
+  height: 60vmin;
+  background-image: url(/assets/pictures/stars2.png);
+  background-color: black;
+}
+body main .page-4 .wrapper {
+  position: absolute;
+  right: 10%;
+  rotate: 20deg;
+}
+@-webkit-keyframes earthturn {
+  from {
+    transform: rotateZ(0) translateX(40vmin);
+  }
+  to {
+    transform: rotateZ(1turn) translateX(40vmin);
+  }
+}
+@keyframes earthturn {
+  from {
+    transform: rotateZ(0) translateX(40vmin);
+  }
+  to {
+    transform: rotateZ(1turn) translateX(40vmin);
+  }
+}
+body main .page-4 .wrapper .orbit {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+  border-radius: 50%;
+  transform: rotateZ(45deg) rotateY(60deg);
+}
+body main .page-4 .wrapper .planet {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+body main .page-4 .wrapper .planet#sun {
+  height: 5vmax;
+  width: 5vmax;
+  top: -50%;
+  right: -50%;
+  background-image: radial-gradient(#ff7300 25%, yellow 75%);
+  box-shadow: 0 0 3rem 1rem yellow;
+  border-radius: 50%;
+  -webkit-animation: sunlight 3s linear infinite forwards;
+          animation: sunlight 3s linear infinite forwards;
+}
+@-webkit-keyframes sunlight {
+  50% {
+    box-shadow: 0 0 4rem 2rem yellow;
+  }
+}
+@keyframes sunlight {
+  50% {
+    box-shadow: 0 0 4rem 2rem yellow;
+  }
+}
+body main .page-4 .wrapper .planet#earth {
+  background-image: url(/assets/pictures/Rotating_earth.gif);
+  background-size: cover;
+  height: 5vmax;
+  width: 5vmax;
+  border-radius: 50%;
+  rotate: 30deg;
+  -webkit-animation: earthturn 6s linear infinite forwards;
+          animation: earthturn 6s linear infinite forwards;
+}
+body main .page-5 form {
+  width: 80vw;
+  max-width: 400px;
+  background-color: #01161e;
+}
+body main .page-5 form .form-title {
+  font-size: 2rem;
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+body main .page-5 form .input-block {
+  margin: 1rem;
+}
+body main .page-5 form .input-block label {
+  font-family: "Julius Sans One", sans-serif;
+  color: white;
+}
+body main .page-5 form .input-block input {
+  padding: 0.5rem 2rem;
+  width: 100%;
+  font-size: 1.5rem;
+}
+body main .page-5 form .input-block textarea {
+  width: 100%;
+  font-size: 1.5rem;
+}
+body footer {
+  background-color: #2a2b2a;
+  height: 3rem;
+  text-align: center;
+  color: white;
+}
+body footer .footer-text {
+  font-size: 2rem;
+}
+body footer .footer-icon {
+  margin: 0 0.5rem;
+}
+
+@media only screen and (max-width: 425px) {
+  body nav {
+    grid-template-columns: repeat(3, auto);
+  }
+  body nav .logo {
+    grid-column: 1;
+  }
+  body nav .user-actions {
+    grid-column: 2;
+  }
+  body nav .user-actions i {
+    scale: 1.5;
+  }
+  body nav .navbar:not(.mobile) {
+    display: none;
+  }
+  body nav #menu-toggle {
+    display: block;
+    color: white;
+    grid-column: 3;
+  }
+  body .navbar.mobile {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s;
+    width: 0;
+    overflow: hidden;
+  }
+  body .navbar.mobile.active {
+    width: 100%;
+  }
+  body .navbar.mobile .navbar-item {
+    background-color: rgba(1, 22, 30, 0.5);
+    color: #f8f4e3;
+    font-family: "Edu SA Beginner", cursive;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-top: 1px solid white;
+  }
+  body .btn-menu {
+    height: 2.25rem;
+    width: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 0.5rem;
+    overflow: hidden;
+    padding: 2px;
+  }
+  @-webkit-keyframes open1 {
+    to {
+      rotate: -45deg;
+      transform-origin: right;
+    }
+  }
+  @keyframes open1 {
+    to {
+      rotate: -45deg;
+      transform-origin: right;
+    }
+  }
+  @-webkit-keyframes open2 {
+    to {
+      translate: 110%;
+    }
+  }
+  @keyframes open2 {
+    to {
+      translate: 110%;
+    }
+  }
+  @-webkit-keyframes open3 {
+    to {
+      rotate: 45deg;
+      transform-origin: right;
+    }
+  }
+  @keyframes open3 {
+    to {
+      rotate: 45deg;
+      transform-origin: right;
+    }
+  }
+  @-webkit-keyframes close1 {
+    from {
+      rotate: -45deg;
+    }
+    to {
+      rotate: 0;
+    }
+  }
+  @keyframes close1 {
+    from {
+      rotate: -45deg;
+    }
+    to {
+      rotate: 0;
+    }
+  }
+  @-webkit-keyframes close2 {
+    from {
+      translate: 110%;
+    }
+    to {
+      translate: 0;
+    }
+  }
+  @keyframes close2 {
+    from {
+      translate: 110%;
+    }
+    to {
+      translate: 0;
+    }
+  }
+  @-webkit-keyframes close3 {
+    from {
+      rotate: 45deg;
+    }
+    to {
+      rotate: 0;
+    }
+  }
+  @keyframes close3 {
+    from {
+      rotate: 45deg;
+    }
+    to {
+      rotate: 0;
+    }
+  }
+  body .btn-menu .line:nth-of-type(1) {
+    -webkit-animation-name: close1;
+            animation-name: close1;
+  }
+  body .btn-menu .line:nth-of-type(2) {
+    -webkit-animation-name: close2;
+            animation-name: close2;
+  }
+  body .btn-menu .line:nth-of-type(3) {
+    -webkit-animation-name: close3;
+            animation-name: close3;
+  }
+  body .btn-menu .line {
+    background-color: white;
+    height: 0.4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    -webkit-animation-duration: 0.25s;
+            animation-duration: 0.25s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    transform-origin: right;
+  }
+  body .btn-menu.active .line:nth-of-type(1) {
+    -webkit-animation-name: open1;
+            animation-name: open1;
+  }
+  body .btn-menu.active .line:nth-of-type(2) {
+    -webkit-animation-name: open2;
+            animation-name: open2;
+  }
+  body .btn-menu.active .line:nth-of-type(3) {
+    -webkit-animation-name: open3;
+            animation-name: open3;
+  }
+  body main .page h2 {
+    margin-top: 5rem;
+  }
+  body main .page-2 {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 1rem;
+  }
+  body main .page-2 .container {
+    justify-items: center;
+    gap: 1rem;
+    margin: auto;
+    padding: 1rem 0;
+    grid-template-rows: 6;
+  }
+  body main .page-2 .container .item {
+    width: 90vw;
+    border-radius: 1rem;
+  }
+  body main .page-2 .container .item .picture {
+    height: 30vh;
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  body main .page-3 {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  body main .page-3 .flex-wrapper {
+    flex-direction: column;
+  }
+  body main .page-3 .flex-wrapper .skills {
+    width: 80vw;
+  }
+}
+@media only screen and (min-width: 425px) {
+  body .mobile {
+    display: none;
+  }
+  body .page-2 .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body .page-2 .container .item .picture {
+    min-height: 15rem;
+    width: auto;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobile {
+    display: none !important;
+  }
+  body .page-2 .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}/*# sourceMappingURL=style.css.map */

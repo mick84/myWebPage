@@ -1,0 +1,345 @@
+@use "../abstracts" as *;
+* {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.mobile {
+  display: none;
+}
+body {
+  height: 100vh;
+  // position: relative;
+  background-image: url(/assets/pictures/bgr.jpg);
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+
+  --height: 3rem;
+  header {
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+  }
+  nav {
+    height: var(--height);
+    font-weight: bold;
+    display: grid;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    background-color: $fogra-29; // transparentize($fogra-29, 0.5);
+    color: $cosmic-latte;
+    z-index: 1000;
+    .logo {
+      grid-column: 1;
+      margin-left: 0.5rem;
+      font-family: "Crimson Pro", serif;
+      font-size: 1.5rem;
+    }
+    .user-actions {
+      display: flex;
+      grid-column: 3;
+      button:not(.active) {
+        display: none;
+      }
+    }
+    #menu-toggle {
+      display: none;
+    }
+    button {
+      width: fit-content;
+      padding: 0.5rem;
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    font-family: "Edu SA Beginner", cursive;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1.8vw;
+    }
+  }
+  main {
+    padding-top: var(--height);
+    overflow: hidden;
+
+    h1 {
+      text-align: center;
+      margin: 5vh auto;
+      font-size: 10vmin;
+      width: fit-content;
+      font-family: "Crimson Pro", serif;
+      background-image: linear-gradient(
+          transparent 20%,
+          transparentize($teal-blue, 0.25) 40%,
+          transparentize($teal-blue, 0.25) 60%,
+          transparent 80%
+        ),
+        linear-gradient(
+          to right,
+          transparent 10%,
+          transparentize($teal-blue, 0.25) 30%,
+          transparentize($teal-blue, 0.25) 70%,
+          transparent 90%
+        );
+      background-blend-mode: lighten;
+      border-radius: 50%;
+      box-shadow: 0 0 5rem 2rem $teal-blue;
+      border: none;
+      color: white;
+      padding: 1rem 3rem;
+      mix-blend-mode: darken;
+    }
+    .btn {
+      margin: 0 auto;
+      border: $test-border;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      h2 {
+        text-align: center;
+        width: fit-content;
+        font-family: "Crimson Pro", serif;
+
+        font-size: 3rem;
+        margin: 3rem auto;
+      }
+    }
+
+    .page-2 {
+      margin: auto;
+      height: max-content;
+      //overflow: visible;
+      padding: 1rem;
+      background-color: $fogra-29;
+      //width: fit-content;
+      h2 {
+        color: $cosmic-latte;
+      }
+      .container {
+        justify-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: $cosmic-latte;
+        font-family: "Julius Sans One", sans-serif;
+        border-radius: 1rem;
+        display: grid;
+        gap: 1rem;
+        max-width: 1200px;
+        width: fit-content;
+        .item {
+          border-radius: 1rem;
+          &:nth-of-type(1) .picture {
+            background-image: url(/assets/pictures/me.jpg);
+            background-position: bottom;
+          }
+          &:nth-of-type(2) .picture {
+            background-image: url(/assets/pictures/me2.jpg);
+          }
+          &:nth-of-type(3) .picture {
+            background-image: url(/assets/pictures/me3.jpg);
+            background-position: top;
+          }
+          &:nth-of-type(4) .picture {
+            background-image: url(/assets/pictures/codingbrain.jpg);
+          }
+          &:nth-of-type(5) .picture {
+            background-image: url(/assets/pictures/Website-Design.jpeg);
+          }
+          &:nth-of-type(6) .picture {
+            background-image: url(/assets/pictures/dev.png);
+          }
+          .picture {
+            // aspect-ratio: 16 /9;
+
+            height: 25vh;
+            border-radius: 1rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+    .page-3 {
+      background-color: $cosmic-latte;
+      color: $nickel;
+      height: fit-content;
+      padding: 1rem;
+      .flex-wrapper {
+        display: flex;
+        align-items: start;
+
+        .skills {
+          display: grid;
+          grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+          width: 80vmin;
+          margin: 0 auto;
+          aspect-ratio: 1;
+          max-width: 400px;
+          gap: 1rem;
+          padding: 1rem;
+
+          .skill {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            &:nth-of-type(1) {
+              background-image: url(/assets/pictures/html.png);
+            }
+            &:nth-of-type(2) {
+              background-image: url(/assets/pictures/css.jpg);
+            }
+            &:nth-of-type(3) {
+              background-image: url(/assets/pictures/sass.jpg);
+            }
+            &:nth-of-type(4) {
+              background-image: url(/assets/pictures/mysql_hosting.png);
+            }
+            &:nth-of-type(5) {
+              background-image: url(/assets/pictures/javascript_logo.png);
+            }
+            &:nth-of-type(6) {
+              background-image: url(/assets/pictures/typescript.png);
+            }
+            &:nth-of-type(7) {
+              background-image: url(/assets/pictures/react.png);
+            }
+            &:nth-of-type(8) {
+              background-image: url(/assets/pictures/node.png);
+            }
+            &:nth-of-type(9) {
+              background-image: url(/assets/pictures/mongo.png);
+            }
+          }
+        }
+      }
+      .question {
+        font-family: "Edu SA Beginner", cursive;
+        font-size: 1.5rem;
+      }
+    }
+    .page-4 {
+      background-clip: border-box;
+      background-size: 30%;
+      position: relative;
+      height: 60vmin;
+      background-image: url(/assets/pictures/stars2.png);
+      background-color: black;
+      .wrapper {
+        $orbit: 80vmin;
+        position: absolute;
+        right: 10%;
+        rotate: 20deg;
+        @keyframes earthturn {
+          from {
+            transform: rotateZ(0) translateX(calc($orbit / 2));
+          }
+          to {
+            transform: rotateZ(1turn) translateX(calc($orbit / 2));
+          }
+        }
+        .orbit {
+          position: relative;
+          height: $orbit;
+          width: $orbit;
+          border-radius: 50%;
+          transform: rotateZ(45deg) rotateY(60deg);
+        }
+        .planet {
+          position: absolute;
+          right: 0;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          &#sun {
+            @keyframes sunlight {
+              50% {
+                box-shadow: 0 0 4rem 2rem yellow;
+              }
+            }
+            height: 5vmax;
+            width: 5vmax;
+            top: -50%;
+            right: -50%;
+            background-image: radial-gradient(#ff7300 25%, yellow 75%);
+            box-shadow: 0 0 3rem 1rem yellow;
+            border-radius: 50%;
+            animation: sunlight 3s linear infinite forwards;
+          }
+          &#earth {
+            background-image: url(/assets/pictures/Rotating_earth.gif);
+            background-size: cover;
+            height: 5vmax;
+            width: 5vmax;
+            border-radius: 50%;
+            rotate: 30deg;
+            //transform-style: preserve-3d;
+            animation: earthturn 6s linear infinite forwards;
+          }
+        }
+      }
+    }
+    .page-5 {
+      form {
+        width: 80vw;
+        max-width: 400px;
+        // margin-top: 20rem;
+        background-color: $fogra-29;
+
+        .form-title {
+          font-size: 2rem;
+          font-family: "Julius Sans One", sans-serif;
+          font-weight: 700;
+          text-align: center;
+          color: white;
+        }
+        .input-block {
+          margin: 1rem;
+          label {
+            font-family: "Julius Sans One", sans-serif;
+            color: white;
+          }
+          input {
+            padding: 0.5rem 2rem;
+            width: 100%;
+            font-size: 1.5rem;
+          }
+          textarea {
+            width: 100%;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    background-color: $jet;
+    height: 3rem;
+    text-align: center;
+    color: white;
+    .footer-text {
+      font-size: 2rem;
+    }
+    .footer-icon {
+      margin: 0 0.5rem;
+    }
+  }
+}

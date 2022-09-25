@@ -1,0 +1,12 @@
+@media screen and(min-width:1024px) {
+  .mobile {
+    display: none !important;
+  }
+  body {
+    .page-2 {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
