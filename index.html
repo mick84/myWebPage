@@ -35,7 +35,7 @@
             >
           </li>
           <li class="navbar-item">
-            <a href="#page-5" class="navbar-link"
+            <a href="#form" class="navbar-link"
               ><span class="navbar-text">Contact&nbsp;Me</span></a
             >
           </li>
@@ -80,7 +80,7 @@
           >
         </li>
         <li class="navbar-item">
-          <a href="#page-5" class="navbar-link"
+          <a href="#form" class="navbar-link"
             ><span class="navbar-text">Contact&nbsp;Me</span></a
           >
         </li>
@@ -169,16 +169,22 @@
         </p>
       </section>
       <section class="page page-4" id="page-4">
-        <div class="wrapper">
-          <div class="planet" id="sun"></div>
-          <div class="orbit">
-            <div class="planet" id="earth"></div>
+        <div class="outer">
+          <div id="sky"></div>
+          <div class="inner">
+            <div id="sun">
+              <div class="core"></div>
+            </div>
+            <div id="orbit">
+              <div id="earth"></div>
+            </div>
           </div>
         </div>
       </section>
       <section class="page page-5" id="page-5">
-        <form action="#" method="post">
-          <p class="form-title">Order your site here!</p>
+        <form action="/" method="post" id="form">
+          <p class="form-title">Leave your order here!</p>
+
           <div class="input-block">
             <label for="name">Full name:</label
             ><input type="text" id="name" required />
@@ -190,30 +196,47 @@
           <div class="input-block">
             <label for="mail">Email</label><input type="email" id="mail" />
           </div>
-
           <div class="input-block">
             <label for="message">Your Message:</label
             ><textarea
               name="message"
               id="message"
               cols="30"
-              rows="10"
               style="resize: none"
               required
             ></textarea>
           </div>
+          <div class="form-buttons">
+            <button class="form-button" id="form-reset" type="reset">
+              Clear</button
+            ><button class="form-button" id="form-submit" type="submit">
+              Submit
+            </button>
+          </div>
         </form>
+        <footer>
+          <p class="footer-text">
+            Find me on:
+            <span class="footer-icon"
+              ><a
+                href="https://www.facebook.com/michael.kunin.1"
+                target="_blank"
+                ><i class="fa-brands fa-facebook"></i></a></span
+            ><span class="footer-icon"
+              ><a
+                href="https://www.linkedin.com/in/michael-kunin-920419100/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin-in"></i></a></span
+            ><span class="footer-icon"
+              ><a href="https://github.com/mick84" target="_blank"
+                ><i class="fa-brands fa-github"></i></a></span
+            ><span class="footer-icon"
+              ><a href="mailto:demenkoff1984@yahoo.com" target="_blank"
+                ><i class="fa-brands fa-yahoo"></i></a
+            ></span>
+          </p>
+        </footer>
       </section>
     </main>
-    <footer>
-      <p class="footer-text">
-        Find me on:
-        <span class="footer-icon"><i class="fa-brands fa-facebook"></i></span
-        ><span class="footer-icon"
-          ><i class="fa-brands fa-linkedin-in"></i></span
-        ><span class="footer-icon"><i class="fa-brands fa-github"></i></span
-        ><span class="footer-icon"><i class="fa-brands fa-yahoo"></i></span>
-      </p>
-    </footer>
   </body>
 </html>

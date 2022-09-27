@@ -1,9 +1,7 @@
 @use "../abstracts" as *;
 * {
   scroll-behavior: smooth;
-}
-::-webkit-scrollbar {
-  display: none;
+  font-family: "Edu SA Beginner", cursive;
 }
 .mobile {
   display: none;
@@ -15,14 +13,16 @@ body {
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
-
   --height: 3rem;
   header {
     position: fixed;
     width: 100%;
     height: fit-content;
+    z-index: 10;
   }
   nav {
+    position: sticky;
+    width: 100%;
     height: var(--height);
     font-weight: bold;
     display: grid;
@@ -30,9 +30,9 @@ body {
     justify-content: space-between;
     grid-template-columns: repeat(3, auto);
     align-items: center;
-    background-color: $fogra-29; // transparentize($fogra-29, 0.5);
+    background-color: $fogra-29;
     color: $cosmic-latte;
-    z-index: 1000;
+
     .logo {
       grid-column: 1;
       margin-left: 0.5rem;
@@ -100,11 +100,21 @@ body {
     }
     .btn {
       margin: 0 auto;
-      border: $test-border;
+      //border: $test-border;
       font-size: 2rem;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.25s;
     }
-
+    .btn--explore {
+      background-image: linear-gradient(45deg, $eagle-green 40%, $nickel 60%);
+      background-size: 200%;
+      background-position: top left;
+      border: 1px solid;
+      &:hover {
+        background-position: bottom right;
+        border-radius: 1rem;
+      }
+    }
     .page {
       display: flex;
       flex-direction: column;
@@ -117,12 +127,11 @@ body {
         text-align: center;
         width: fit-content;
         font-family: "Crimson Pro", serif;
-
+        user-select: none;
         font-size: 3rem;
         margin: 3rem auto;
       }
     }
-
     .page-2 {
       margin: auto;
       height: max-content;
@@ -167,8 +176,6 @@ body {
             background-image: url(/assets/pictures/dev.png);
           }
           .picture {
-            // aspect-ratio: 16 /9;
-
             height: 25vh;
             border-radius: 1rem;
             background-size: cover;
@@ -236,95 +243,155 @@ body {
       }
     }
     .page-4 {
-      background-clip: border-box;
-      background-size: 30%;
-      position: relative;
-      height: 60vmin;
-      background-image: url(/assets/pictures/stars2.png);
-      background-color: black;
-      .wrapper {
-        $orbit: 80vmin;
-        position: absolute;
-        right: 10%;
-        rotate: 20deg;
-        @keyframes earthturn {
-          from {
-            transform: rotateZ(0) translateX(calc($orbit / 2));
+      display: block;
+      height: fit-content;
+      .outer {
+        position: relative;
+        background-color: black;
+        margin: auto;
+        overflow: hidden;
+        width: 100vmin;
+        aspect-ratio: 1.3;
+        #sky {
+          @keyframes shining-sky {
+            50% {
+              opacity: 0.4;
+            }
           }
-          to {
-            transform: rotateZ(1turn) translateX(calc($orbit / 2));
-          }
-        }
-        .orbit {
-          position: relative;
-          height: $orbit;
-          width: $orbit;
-          border-radius: 50%;
-          transform: rotateZ(45deg) rotateY(60deg);
-        }
-        .planet {
+          animation: "shining-sky" 4s ease-in-out infinite;
+          background-image: url(/assets/pictures/stars.png);
+          background-size: 100%;
           position: absolute;
-          right: 0;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
-          &#sun {
-            @keyframes sunlight {
-              50% {
-                box-shadow: 0 0 4rem 2rem yellow;
+          height: 100%;
+          width: 100%;
+        }
+        .inner {
+          rotate: 15deg;
+          translate: 0 -12%;
+
+          #sun {
+            .core {
+              @keyframes shining {
+                from {
+                  box-shadow: 0 0 20vmin 5vmin #ff5100, 0 0 50vmin 5vmin #ffae00;
+                }
+                to {
+                  box-shadow: 0 0 20vmin 15vmin #ff5100,
+                    0 0 50vmin 15vmin #ffae00;
+                }
+              }
+              animation: shining 2s linear infinite alternate;
+              height: 100%;
+              width: 100%;
+              scale: 0.59;
+              border-radius: 50%;
+            }
+            @keyframes sun {
+              to {
+                rotate: 1turn;
               }
             }
-            height: 5vmax;
-            width: 5vmax;
-            top: -50%;
-            right: -50%;
-            background-image: radial-gradient(#ff7300 25%, yellow 75%);
-            box-shadow: 0 0 3rem 1rem yellow;
-            border-radius: 50%;
-            animation: sunlight 3s linear infinite forwards;
-          }
-          &#earth {
-            background-image: url(/assets/pictures/Rotating_earth.gif);
+            animation: sun 20s linear infinite;
+            position: absolute;
+            right: 0;
+            top: 0;
+            translate: -100% 100%;
+            aspect-ratio: 1;
+            height: 20%;
+            background-image: url(/assets/pictures/sun2.gif);
             background-size: cover;
-            height: 5vmax;
-            width: 5vmax;
+            background-position: center;
             border-radius: 50%;
-            rotate: 30deg;
+          }
+          #orbit {
+            @keyframes orbit {
+              from {
+                transform: rotateZ(45deg) rotateY(60deg) rotateZ(0);
+              }
+              to {
+                transform: rotateZ(45deg) rotateY(60deg) rotateZ(1turn);
+              }
+            }
+            border-radius: 50%;
+            aspect-ratio: 1;
+            margin-left: auto;
+            position: relative;
+            //perspective: 1500px;
             //transform-style: preserve-3d;
-            animation: earthturn 6s linear infinite forwards;
+            animation: orbit 10s linear infinite;
+            #earth {
+              position: absolute;
+              left: 50%;
+              translate: -50% -50%;
+              margin: 0 auto;
+              height: 10%;
+              background-size: cover;
+              aspect-ratio: 1;
+              background-image: url(/assets/pictures/Rotating_earth.gif);
+            }
           }
         }
       }
     }
     .page-5 {
       form {
-        width: 80vw;
-        max-width: 400px;
-        // margin-top: 20rem;
-        background-color: $fogra-29;
+        margin: auto auto 0;
+        padding: 0.5rem;
+        width: 80%;
+        display: grid;
 
+        border: $test-border;
+        background-image: linear-gradient(
+          gray 10%,
+          rgba(0, 0, 0, 0.5) 50%,
+          gray 90%
+        );
+        font-size: 1.5rem;
         .form-title {
-          font-size: 2rem;
-          font-family: "Julius Sans One", sans-serif;
-          font-weight: 700;
-          text-align: center;
           color: white;
+          font-size: 1.5rem;
+          user-select: none;
         }
+
         .input-block {
-          margin: 1rem;
+          position: relative;
+
           label {
-            font-family: "Julius Sans One", sans-serif;
+            display: block;
             color: white;
+            mix-blend-mode: screen;
           }
-          input {
-            padding: 0.5rem 2rem;
-            width: 100%;
-            font-size: 1.5rem;
-          }
+          input,
           textarea {
             width: 100%;
-            font-size: 1.5rem;
+            border-radius: 0.5rem;
+            padding: 0.25rem 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman";
+            line-height: 1.2rem;
+            font-size: 1.2rem;
+          }
+          textarea {
+            min-height: 10rem;
+          }
+        }
+        .form-buttons {
+          margin: 0 auto;
+          .form-button {
+            padding: 0.5rem 1rem;
+            margin: 0 1rem;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+
+            &[type="reset"] {
+              background-color: red;
+            }
+            &[type="submit"] {
+              background-color: green;
+            }
+            &:active {
+              scale: 0.95;
+            }
           }
         }
       }
@@ -332,11 +399,13 @@ body {
   }
   footer {
     background-color: $jet;
-    height: 3rem;
+    padding: 0.5rem;
     text-align: center;
+    margin-top: auto;
+    width: 100%;
     color: white;
     .footer-text {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .footer-icon {
       margin: 0 0.5rem;

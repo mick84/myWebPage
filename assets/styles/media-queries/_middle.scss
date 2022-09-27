@@ -1,4 +1,4 @@
-@media screen and(min-width:1024px) {
+@media screen and(min-width:768px) {
   .mobile {
     display: none !important;
   }
@@ -6,6 +6,18 @@
     .page-2 {
       .container {
         grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .page-5 {
+      form {
+        .form-title {
+          text-align: center;
+          font-size: 2rem;
+        }
+        max-width: 400px;
+        .input-block {
+          margin: 0.5rem;
+        }
       }
     }
   }
